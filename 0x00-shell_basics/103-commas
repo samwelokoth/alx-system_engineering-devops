@@ -1,2 +1,2 @@
-#! /bin/bash
+#!/bin/bash
 ls -Ap | sed 's/[^a-zA-Z0-9\/].*//; 1b; /^.$/b; /^..$/b; /^.$/,/^..$/b; s/$/,/' | tr -d '\n'; echo
