@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -Ap | sed 's/[^a-zA-Z0-9\/].*//; 1b; /^.$/b; /^..$/b; /^.$/,/^..$/b; s/$/,/' | tr -d '\n'; echo
+ls -Ap | awk '{printf (/^.$|^..$|\/$/ ? $0 "," : $0 "\n")}' | tr -d '\n'; echo
