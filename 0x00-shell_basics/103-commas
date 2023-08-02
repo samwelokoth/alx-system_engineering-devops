@@ -1,3 +1,3 @@
 #!/bin/bash 
-find . -maxdepth 1 -printf '%f\n' | sort -k1.2,1n -k1 | tr '\n' ',' | sed 's/\(.*\),/\1\n/'
+ls -Ap | paste -sd ',' -; echo
 
