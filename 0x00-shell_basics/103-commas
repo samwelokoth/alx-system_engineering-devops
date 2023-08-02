@@ -1,3 +1,2 @@
-#!/bin/bash 
-ls -Ap | paste -sd ',' -; echo
-
+#! /bin/bash
+ls -Ap | sed 's/[^a-zA-Z0-9\/].*//; 1b; /^.$/b; /^..$/b; /^.$/,/^..$/b; s/$/,/' | tr -d '\n'; echo
