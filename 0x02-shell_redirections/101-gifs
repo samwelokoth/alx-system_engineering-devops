@@ -1,0 +1,2 @@
+#!/bin/bash
+find . -type f -name '*.gif' -printf "%s\t%f\n" | sort -V -k2 | sort -t$'\t' -k1,1n | cut -f2
