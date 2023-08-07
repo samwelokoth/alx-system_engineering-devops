@@ -1,0 +1,3 @@
+#!/bin/bash
+cat acrostic.txt | awk '{ printf substr($0, 1, 1) } END { print "" }'
+
