@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# a script to display listening ports  and to show PID and name of the program to which the socket belongs
+#netstat --listening && echo "Shell Name: $0, PID of netstat: $$"
+echo "Listening Ports:"
+sudo netstat -tuln
+
+# Display PID and Program for each listening socket
+echo -e "\nPID and Program for Listening Ports:"
+sudo lsof -i -P -n | awk '$4 ~ /LISTEN/ {print $2, $1}' | sort -k 2
+
