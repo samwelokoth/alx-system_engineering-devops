@@ -1,7 +1,12 @@
-#! /usr/bin/env bash
+#!/usr/bin/env bash
 
 # Generate RSA key pair with 4096 bits
 ssh-keygen -t rsa -b 4096 -f ~/.ssh/school -N "betty"
 
-echo "RSA key pair created successfully."
+# Check if the school file exists
+if [ -f ~/.ssh/school ]; then
+    echo "school file exists."
+else
+    echo "school file does not exist."
+fi
 
