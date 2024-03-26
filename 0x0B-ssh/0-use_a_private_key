@@ -1,4 +1,4 @@
-#!/usr/bin/env/bash
-
+#!/usr/bin/env bash
+#a script to allow connection to my ubuntu server using rsa private key
 ssh -i ~/.ssh/school ubuntu@54.166.77.54
 
