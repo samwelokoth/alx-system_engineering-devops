@@ -1,5 +1,5 @@
-#!/bin/bash
-
+ #!/usr/bin/env bash
+#a script to transfer files from your client to the server after providing the parameters below
 if [ $# -lt 4 ]; then
     echo "Usage: $0 PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
     exit 1
