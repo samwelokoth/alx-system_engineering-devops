@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ $# -lt 4 ]; then
+    echo "Usage: $0 PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+    exit 1
+fi
+
+FILE=$1
+SERVER_IP=$2
+USERNAME=$3
+PRIVATE_KEY=$4
+DESTINATION=~/${FILE}
+
+echo "Transferring ${FILE} to ${DESTINATION} on ${SERVER_IP}"
+
+sshpass -p "" ssh -o StrictHostKeyChecking=no "${USERNAME}@${SERVER_IP}" 'mkdir -p ~/' && \
+sshpass -p "" scp -o StrictHostKeyChecking=no "${FILE}" "${USERNAME}@${SERVER_IP}:${DESTINATION}"
