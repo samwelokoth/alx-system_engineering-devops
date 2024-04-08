@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+if ! netstat -tulnp | grep -q "nginx:.*LISTEN.*0.0.0.0:80"; then echo "Nginx is not running or not listening on port 80. Starting Nginx..."; sudo systemctl start nginx; echo "Nginx has been started."; fi
