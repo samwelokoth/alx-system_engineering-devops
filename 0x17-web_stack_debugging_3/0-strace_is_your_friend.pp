@@ -1,6 +1,5 @@
-# Fixes bad `phpp` extensions to `php` in the WordPress file `wp-settings.php`.
-
-exec { 'fix-wordpress':
-  command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
+#fixing apache2
+exec { 'fixing-apache2':
+  command => 'expect -c "spawn sudo systemctl start apache2 && sudo systemctl enable apache2; expect \"password:\" {send \"<password>\r\"}; interact"',
   path    => '/usr/local/bin/:/bin/'
 }
